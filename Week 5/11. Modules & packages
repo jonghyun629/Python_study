@@ -1,0 +1,129 @@
+# 🔹 1. What is a Module?
+
+- A **module** is just a **Python file (`.py`)** that contains functions, classes, or variables you want to reuse.
+- Think of it as a **toolbox**.
+
+### Example: mymath.py
+
+```python
+# mymath.py
+def add(a, b):
+    return a + b
+
+def square(x):
+    return x * x
+
+```
+
+Now in another file:
+
+```python
+import mymath
+
+print(mymath.add(3, 4))     # 7
+print(mymath.square(5))     # 25
+
+```
+
+👉 `mymath` is a **module**.
+
+---
+
+# 🔹 2. Built-in Modules
+
+Python already comes with many modules.
+
+Examples: `math`, `random`, `datetime`.
+
+```python
+import math
+print(math.sqrt(16))    # 4.0
+print(math.pi)          # 3.14159
+
+```
+
+```python
+import random
+print(random.randint(1, 10))  # random number 1–10
+
+```
+
+---
+
+# 🔹 3. Import Variations
+
+```python
+import math
+print(math.sqrt(25))
+
+from math import sqrt, pi
+print(sqrt(25), pi)     # directly use
+
+import math as m
+print(m.sqrt(25))       # alias
+
+```
+
+---
+
+# 🔹 4. What is a Package?
+
+- A **package** is a **collection of modules** in a folder.
+- The folder usually contains an `__init__.py` file (can be empty) to tell Python it’s a package.
+- Example folder structure:
+
+```
+mypackage/
+    __init__.py
+    math_tools.py
+    string_tools.py
+
+```
+
+### Usage:
+
+```python
+from mypackage import math_tools
+print(math_tools.add(2, 3))
+
+```
+
+---
+
+# 🔹 5. Installing External Packages
+
+- You can install third-party packages using **pip**:
+
+```bash
+pip install requests
+
+```
+
+- Example:
+
+```python
+import requests
+
+response = requests.get("https://api.github.com")
+print(response.status_code)   # 200
+
+```
+
+---
+
+# 🔹 Quick Summary
+
+- **Module** = single `.py` file with code you can reuse.
+- **Package** = folder with multiple modules.
+- **Built-in modules** (like `math`, `random`) are ready to use.
+- **External packages** are installed via `pip`.
+
+---
+
+# 🔹 Practice 📝
+
+1. Create a file `greet.py` with a function `say_hello(name)` that prints `"Hello, {name}"`.
+2. Import it into another Python file and call it.
+3. Use the built-in `random` module to simulate rolling a dice (1–6).
+
+---
